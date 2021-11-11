@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Brand;
 
 class BrandFactory extends Factory
 {
@@ -14,7 +15,7 @@ class BrandFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word()
         ];
     }
 }
