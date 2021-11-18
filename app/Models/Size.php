@@ -20,7 +20,7 @@ class Size extends Model
     //Relacion N:M 
     public function colors()
     {
-        return $this->belongsToMany(Color::class);
+        return $this->belongsToMany(Color::class)->withPivot('quantity');
     }
 
 

@@ -20,8 +20,12 @@ module.exports = {
                 trueGray: colors.trueGray,
                 orange: colors.orange,
                 greenLime: colors.lime
-              }
+              },
         },
+    },
+
+    variants: {
+        opacity: ({ after }) => after(["disabled"]),
     },
 
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
