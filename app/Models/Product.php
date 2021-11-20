@@ -52,7 +52,7 @@ class Product extends Model
     //Relacion N:M 
     public function colors()
     {
-        return $this->belongsToMany(Color::class)->withPivot('quantity');
+        return $this->belongsToMany(Color::class)->withPivot('quantity', 'id');
     }
 
     //Relacion 1:N polimorfica

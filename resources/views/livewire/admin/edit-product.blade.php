@@ -128,9 +128,40 @@
             <x-jet-button 
                 wire:loading.attr="disabled"
                 wire:target="save"
-                wire:click="save">
+                wire:click="save"
+                >
                 Actualizar Producto
             </x-jet-button>
         </div>
     </div>
+
+    @if ($this->subcategory)
+        
+        @if ($this->subcategory->size)
+
+            @livewire('admin.size-product', ['product' => $product], key('size-product' . $product->id))
+
+        @elseif ($this->subcategory->color)
+            
+             @livewire('admin.color-product', ['product' => $product], key('color-product' . $product->id))
+
+        @endif
+
+    @endif
+
+    @push('script')
+        <script>
+
+            Livewire.on('Actualizar', pivot => {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Producto actualizado',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            } )
+            
+        </script>
+    @endpush
 </div>
