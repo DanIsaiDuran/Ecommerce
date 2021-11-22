@@ -127,4 +127,22 @@
             Crear Producto
         </x-jet-button>
     </div>
+
+
+
+    @push('script')
+
+        <script>
+            Livewire.on('crearP', () => {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Producto creado',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                } )
+        </script>
+
+    @endpush
 </div>

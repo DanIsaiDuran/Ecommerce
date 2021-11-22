@@ -80,6 +80,8 @@ class CreateProduct extends Component
 
         $product->save();
 
+        $this->emit('crearP');
+
         return redirect()->route('admin.products.edit', $product);
     }
 

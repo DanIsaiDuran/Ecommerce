@@ -77,7 +77,7 @@
                         @endforeach
                     </select>
         
-                    <x-jet-input-error for="subcategory_id" />
+                    <x-jet-input-error for="product.subcategory_id" />
                 </div>
             </div>
         
@@ -88,7 +88,7 @@
                             wire:model="product.name"
                             class=" w-full" placeholder="Ingrese el nombre del producto" />
                 
-                <x-jet-input-error for="name" />
+                <x-jet-input-error for="product.name" />
             </div>
         
             {{-- Slug --}}
@@ -99,7 +99,7 @@
                             wire:model="product.slug"
                             class=" w-full bg-gray-200" placeholder="Ingrese el slug del producto" />
         
-                <x-jet-input-error for="slug" />
+                <x-jet-input-error for="product.slug" />
             </div>
         
             {{-- Descripción --}}
@@ -122,7 +122,7 @@
                          x-ref="miEditor"></textarea>
                 </div>
                
-                    <x-jet-input-error for="description" />
+                    <x-jet-input-error for="product.description" />
             </div>
         
             <div class=" grid grid-cols-2 gap-6 mb-4">
@@ -136,7 +136,7 @@
                         @endforeach
                     </select>
         
-                    <x-jet-input-error for="brand_id" />
+                    <x-jet-input-error for="product.brand_id" />
                 </div>
         
                 {{-- Precio --}}
@@ -146,7 +146,7 @@
                         wire:model="product.price"
                         type="number" class=" w-full" step="0.01" />
         
-                    <x-jet-input-error for="price" />
+                    <x-jet-input-error for="product.price" />
                 </div>
             </div>
         
@@ -158,7 +158,7 @@
                         <x-jet-input 
                             wire:model="product.quantity"
                             type="number" class=" w-full" />
-        
+
                         <x-jet-input-error for="product.quantity" />
                     </div>
         
@@ -167,9 +167,9 @@
         
             <div class=" flex justify-end items-center mt-4">
     
-                <x-jet-action-message class=" mr-3" on="saved">
+               {{--   <x-jet-action-message class=" mr-3" on="saved">
                     Actualizado
-                </x-jet-action-message>
+                </x-jet-action-message> --}}
     
                 <x-jet-button 
                     wire:loading.attr="disabled"
@@ -221,7 +221,7 @@
        
             <script>
     
-                Livewire.on('Actualizar', () => {
+                Livewire.on('ActualizarP', () => {
                     Swal.fire({
                         position: 'center',
                         icon: 'success',

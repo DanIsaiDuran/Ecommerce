@@ -96,7 +96,7 @@ class EditProduct extends Component
 
         $this->product->save();
 
-        $this->emit('Actualizar');
+        $this->emit('ActualizarP');
 
     }
 

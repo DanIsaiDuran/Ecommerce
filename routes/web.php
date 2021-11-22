@@ -21,13 +21,10 @@ Route::get('/', WelcomeController::class);
 Route::get('categories/{category}', [CategoryController::class, 'show'] )->name('categories.show');
 Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
 
-Route::get('shopping-cart', ShoppingCart::class)->name('shopping-cart'); //->middleware(['auth', 'verified'])
+Route::get('shopping-cart', ShoppingCart::class)->middleware(['auth', 'verified'])->name('shopping-cart');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('prueba', function () {
-    \Cart::destroy();
-});
