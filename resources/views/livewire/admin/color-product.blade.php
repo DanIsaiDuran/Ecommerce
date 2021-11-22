@@ -52,6 +52,7 @@
         </div>
     </div>
 
+    @if ($product_colors->count())
     <div class="bg-white shadow-lg rounded-lg p-6">
         <table>
             <thead>
@@ -95,6 +96,7 @@
             </tbody>
         </table>
     </div>
+    @endif
 
     <x-jet-dialog-modal wire:model="open">
 
@@ -162,7 +164,7 @@
                         Swal.fire(
                         '¡Eliminado!',
                         'Tu archivo se ha eliminado.',
-                        'éxito'
+                        'success'
                         )
                     }
                 })
